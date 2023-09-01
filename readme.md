@@ -2,7 +2,6 @@
 
 # Inception
 #### The joys of sys admin and Docker
-![](https://raw.githubusercontent.com/byaliego/42-project-badges/main/badges/minishelle.png)
 
 </div>
 
