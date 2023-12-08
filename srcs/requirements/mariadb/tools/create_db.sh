@@ -8,8 +8,6 @@ print_failure() {
 	printf "\e[31m%s\e[0m\n" "$1"
 }
 
-mysql --version
-
 # Start the mysql daemon in the background.
 if service mariadb start; then
 	print_success "mariadb service started successfully ✔️"
@@ -52,10 +50,6 @@ else
 	exit 1
 fi
 
-echo "============================"
-mysql -e "SELECT Host, User, Password FROM mysql.user;"
-echo "============================"
-
 # Update root password
 if mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${SQL_ROOT_PASSWORD}';"; then
 	print_success "root password changed ✔️"
@@ -63,10 +57,6 @@ else
 	print_failure "root password failed to change ❌"
 	exit 1
 fi
-
-echo "============================"
-mysql -e "SELECT Host, User, Password FROM mysql.user;"
-echo "============================"
 
 # Stop the mysql daemon to restart it with the new configuration.
 if mysqladmin -u root -p${SQL_ROOT_PASSWORD} shutdown; then
