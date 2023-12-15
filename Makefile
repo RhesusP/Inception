@@ -6,7 +6,7 @@
 #    By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/01 14:28:57 by cbernot           #+#    #+#              #
-#    Updated: 2023/12/13 21:50:06 by cbernot          ###   ########.fr        #
+#    Updated: 2023/12/15 01:48:02 by cbernot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@
 # ------------------------------------------------------------------------------
 
 LOGIN			=	cbernot
-VOL_PATH		=	/Users/camille/42/42cursus/ft_services/
+VOL_PATH		=	/home/$(LOGIN)/data/
 YML_PATH		=	srcs/docker-compose.yml
 NGINX_PATH		=	srcs/requirements/nginx
 MARIADB_PATH	=	srcs/requirements/mariadb
@@ -47,28 +47,28 @@ UNDERLINE	=	\033[4m
 # ------------------------------------------------------------------------------
 
 all:
-	@mkdir -p $(VOL_PATH)wordpress
+	@sudo mkdir -p $(VOL_PATH)wordpress
 	@echo "$(ERASE)$(GREEN) ✔$(RESET) directory $(VOL_PATH)wordpress\t$(GREEN)created$(RESET)"
-	@mkdir -p $(VOL_PATH)mariadb
+	@sudo mkdir -p $(VOL_PATH)mariadb
 	@echo "$(ERASE)$(GREEN) ✔$(RESET) directory $(VOL_PATH)mariadb\t$(GREEN)created$(RESET)"
-	@chmod +w $(VOL_PATH)wordpress
-	@chmod +w $(VOL_PATH)mariadb
+	@sudo chmod 777 $(VOL_PATH)wordpress
+	@sudo chmod 777 $(VOL_PATH)mariadb
 	@echo "$(ERASE)$(GREEN) ✔$(RESET) granted writing rights\t\t\t\t\t$(GREEN)done$(RESET)"
-	docker compose -f $(YML_PATH) up --build
+	sudo docker compose -f $(YML_PATH) up --build
 
 stop:
-	docker compose -f $(YML_PATH) stop
+	sudo docker compose -f $(YML_PATH) stop
 
 # Cleaning
 clean:
-	docker compose -f $(YML_PATH) down -v
+	sudo docker compose -f $(YML_PATH) down -v
 
 fclean: clean
-	@rm -rf $(VOL_PATH)wordpress
+	@sudo rm -rf $(VOL_PATH)wordpress
 	@echo "$(ERASE)$(GREEN) ✔$(RESET) directory $(VOL_PATH)wordpress\t$(YELLOW)deleted$(RESET)"
-	@rm -rf $(VOL_PATH)mariadb
+	@sudo rm -rf $(VOL_PATH)mariadb
 	@echo "$(ERASE)$(GREEN) ✔$(RESET) directory $(VOL_PATH)mariadb\t$(YELLOW)deleted$(RESET)"
-	docker system prune -af --volumes
+	sudo docker system prune -af --volumes
 	@echo "$(ERASE)$(GREEN) ✔$(RESET) docker containers, images, volumes, networks and cache\t$(YELLOW)deleted$(RESET)"
 
 re: fclean all
