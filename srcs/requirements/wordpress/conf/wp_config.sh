@@ -82,4 +82,4 @@ fi
 
 printf "\n\n\n\e[1m\e[32m🚀 Website is ready 🚀\e[0m\n"
 
-/usr/sbin/php-fpm7.3 -F
+/usr/sbin/php-fpm8.2 -F
