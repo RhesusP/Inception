@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:bullseye
 
 RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y ca-certificates apt-transport-https software-properties-common wget curl lsb-release
