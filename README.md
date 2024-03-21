@@ -10,7 +10,7 @@ https://github.com/RhesusP/Inception/assets/58002704/9bf024fd-db1b-4375-a533-65a
 
 ## About
 
-This project is the first Docker project of the [42 School](https://42.fr/en/homepage/) Common Core. This project consists in having you set up a small infrastructure composed of different services under specific rules (mariadb / wordpress / nginx).
+This project is the first Docker project of the [42 School](https://42.fr/en/homepage/) Common Core. This project consists in having you set up a small LEMP infrastructure composed of different services under specific rules (mariadb / wordpress / nginx).
 
 ## Subject
 
