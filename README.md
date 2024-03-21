@@ -4,11 +4,7 @@
 
 #### System Administration exercice
 
-<br />
-<br />
-<img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Container_ship_re_alm4.svg" height=300>
-<br />
-<br />
+https://github.com/RhesusP/Inception/assets/58002704/9bf024fd-db1b-4375-a533-65a1d862ace0
 
 </div>
 
