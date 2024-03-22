@@ -74,7 +74,7 @@ WORDPRESS_PASSWORD=
 WORDPRESS_USER_EMAIL=
 ```
 
-3. Add the following line in your `/stc/hosts` file:
+3. Add the following line in your `/etc/hosts` file:
 ```txt
 127.0.0.1	your_login.42.fr
 ```
